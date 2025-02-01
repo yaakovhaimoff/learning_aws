@@ -4,7 +4,7 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 # Configure MongoDB connection
-client = MongoClient("mongodb://mongo-container:27017/")  # Update with your MongoDB URI if needed
+client = MongoClient("mongodb://mongodb-service:27017")  # Update with your MongoDB URI if needed
 db = client["mydatabase"]
 collection = db["counter"]
 
@@ -25,6 +25,3 @@ def hello():
     collection.update_one({}, {"$set": {"count": count}})
 
     return jsonify(message=f'Hello from the server! {count}')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
