@@ -35,9 +35,9 @@ spec:
     spec:
       containers:
       - name: hello-world-container
-        image: yaakovhaimoff/docker-k8s
+        image: 127.0.0.1:5000/hello-world:master
         ports:
         - containerPort: 80
-        env:
-        - name: MONGO_URI
-          value: "mongodb://mongodb-service:27017"
+        # env:
+        # - name: MONGO_URI
+        #   value: "mongodb://mongodb-service:27017"
